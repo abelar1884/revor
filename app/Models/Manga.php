@@ -14,6 +14,6 @@ class Manga extends Model
 
     public function tags()
     {
-        return $this->morphToMany('App\Models\Tag', 'content','ContentTag');
+        return $this->morphToMany('App\Models\Tag','taggable','taggables');
     }
 }
