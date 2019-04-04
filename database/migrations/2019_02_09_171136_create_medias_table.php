@@ -17,9 +17,8 @@ class CreateMediasTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('file');
-            $table->unsignedInteger('type');
-            $table->unsignedInteger('medias_id');
-            $table->string('medias_type');
+            $table->string('type');
+            $table->unsignedInteger('model_id');
             $table->timestamps();
         });
     }

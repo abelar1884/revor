@@ -8,9 +8,13 @@ class Manga extends Model
 {
     protected $fillable = [
         'title',
-        'index_page',
         'count_page'
     ];
+
+    public function pages()
+    {
+        return $this->hasMany(Medias::class, 'model_id');
+    }
 
     public function tags()
     {

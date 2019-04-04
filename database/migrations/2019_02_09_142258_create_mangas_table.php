@@ -16,7 +16,6 @@ class CreateMangasTable extends Migration
         Schema::create('mangas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('index_page');
             $table->integer('count_page');
             $table->timestamps();
         });
