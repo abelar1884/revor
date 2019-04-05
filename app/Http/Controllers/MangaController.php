@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Manga;
 use App\Models\Medias;
+use App\Models\Tag;
 use App\Modules\Traits\UploadManga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -14,7 +15,7 @@ class MangaController extends Controller
 
     public function addPage()
     {
-        return view('manga.add');
+        return view('manga.add', ['tags' => Tag::all()]);
     }
 
     public function addManga(Request $request)

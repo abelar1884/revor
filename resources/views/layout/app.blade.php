@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
 </head>
 <body>
+<div class="container">
+    @include('layout.navbar')
+</div>
 @yield('content')
 </body>
 </html>

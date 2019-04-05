@@ -13,5 +13,5 @@
 
 Route::get('/', 'MainController@index');
 
-Route::get('/manga/add', 'MangaController@addPage');
+Route::get('/manga/add', 'MangaController@addPage')->name('manga.add');
 Route::post('/manga/upload', 'MangaController@addManga');
