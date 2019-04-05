@@ -1,20 +1,16 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+@extends('layout.app')
 
-        <title>Laravel</title>
-
-
-
-    </head>
-    <body>
-        {{Form::open(['url' => '/manga/upload', 'class' => 'class', 'file' => true])}}
-        <input type="file" multiple name="files[]">
-        <input  name="name">
-        <input type="submit">
-        {{Form::close()}}
-    </body>
-</html>
+@section('content')
+    <div class="container">
+        <div class="row">
+            @foreach($mangas as $manga)
+                <div class="col-xl-3">
+                    <a href="">
+                        <div class="index-image" style="background: url('../storage/{{$manga->pages->first()->file}}'); background-size: cover"></div>
+                    </a>
+                    <p>{{$manga->title}}</p>
+                </div>
+            @endforeach
+        </div>
+    </div>
+@endsection

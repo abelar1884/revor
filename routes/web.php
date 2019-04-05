@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@index');
 
+Route::get('/manga/add', 'MangaController@addPage');
 Route::post('/manga/upload', 'MangaController@addManga');

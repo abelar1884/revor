@@ -12,6 +12,11 @@ class MangaController extends Controller
 {
     use UploadManga;
 
+    public function addPage()
+    {
+        return view('manga.add');
+    }
+
     public function addManga(Request $request)
     {
         $manga = Manga::create([
