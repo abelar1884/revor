@@ -18,6 +18,6 @@ class Manga extends Model
 
     public function tags()
     {
-        return $this->morphToMany('App\Models\Tag','taggable','taggables');
+        return $this->morphToMany(Tag::class,'taggable');
     }
 }

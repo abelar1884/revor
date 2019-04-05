@@ -11,6 +11,20 @@ class TagSeed extends Seeder
      */
     public function run()
     {
-        //
+        $tags = [
+            'big brests',
+            'succubus',
+            'shotacon',
+            'milf',
+            'trap',
+            'muscle'
+        ];
+
+        foreach ($tags as $tag)
+        {
+            \App\Models\Tag::create([
+               'title' => $tag
+            ]);
+        }
     }
 }
