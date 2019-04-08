@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Manga;
 use App\Models\Medias;
 use App\Models\Tag;
+use App\Models\Taggable;
 use App\Modules\Traits\UploadManga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -18,8 +19,20 @@ class MangaController extends Controller
         return view('manga.add', ['tags' => Tag::all()]);
     }
 
+    public function showSinglePage(Manga $manga)
+    {
+        return view('manga.single', ['object' => $manga]);
+    }
+
+
     public function addManga(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'files' => 'required',
+            'tags' => 'required'
+        ]);
+
         $manga = Manga::create([
             'title' => $request->input('name'),
             'count_page' => count($request->file('files'))
@@ -35,6 +48,20 @@ class MangaController extends Controller
             ]);
         }
 
+        foreach ($request->input('tags') as $tag)
+        {
+            Taggable::create([
+                'tag_id' => $tag,
+                'taggable_id' => $manga->id,
+                'taggable_type' => Manga::class
+            ]);
+        }
+
         return redirect()->back()->with('success', 'Манга добавлена');
+    }
+
+    public function mangaAll()
+    {
+        return response()->json(Manga::all());
     }
 }

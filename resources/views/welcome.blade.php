@@ -6,7 +6,7 @@
             @foreach($mangas as $manga)
                 <div class="col-xl-3">
                     @if($manga->pages->first())
-                    <a href="">
+                    <a href="{{route('manga.single',['manga' => $manga->id])}}">
                         <div class="index-image" style="background: url('../storage/{{$manga->pages->first()->file}}'); background-size: cover"></div>
                     </a>
                     @else

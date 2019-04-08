@@ -2,6 +2,15 @@
 
 @section('content')
     <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             {{Form::open(['url' => '/manga/upload', 'class' => 'offset-xl-3 col-xl-6', 'file' => true])}}
             <div class="form-group">

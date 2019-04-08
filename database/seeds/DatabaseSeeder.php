@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(MangaSeed::class);
+        //$this->call(MangaSeed::class);
         $this->call(TagSeed::class);
     }
 }
