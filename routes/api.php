@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/manga_all', 'MangaController@mangaAll');
+Route::get('/manga_all', ['middleware' => 'CORS', 'uses' => 'MangaController@mangaAll']);

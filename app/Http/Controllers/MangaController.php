@@ -62,6 +62,12 @@ class MangaController extends Controller
 
     public function mangaAll()
     {
-        return response()->json(Manga::all());
+        $manga = Manga::find(1);
+        $response = [
+            'id' => $manga->id,
+            'title' => $manga->title,
+            'indexImg' => '/storage/'.$manga->pages->first()->file
+        ];
+        return response()->json($response);
     }
 }
