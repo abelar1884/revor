@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2019-04-05.13:03:11.697</IntrospectionTimestamp>
-      <IntrospectionStateNumber>79634</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-04-12.14:00:47.660</IntrospectionTimestamp>
+      <IntrospectionStateNumber>90127</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -30,361 +30,417 @@
       <ObjectId>12113</ObjectId>
     </schema>
     <sequence id="9" parent="3" name="mangas_id_seq">
-      <ObjectId>399076</ObjectId>
-      <StateNumber>79632</StateNumber>
+      <ObjectId>415941</ObjectId>
+      <StateNumber>90123</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="10" parent="3" name="medias_id_seq">
-      <ObjectId>399084</ObjectId>
-      <StateNumber>79634</StateNumber>
+      <ObjectId>415949</ObjectId>
+      <StateNumber>90125</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="11" parent="3" name="migrations_id_seq">
-      <ObjectId>399032</ObjectId>
-      <StateNumber>79623</StateNumber>
+      <ObjectId>415897</ObjectId>
+      <StateNumber>90114</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="12" parent="3" name="taggables_id_seq">
-      <ObjectId>399068</ObjectId>
-      <StateNumber>79630</StateNumber>
+    <sequence id="12" parent="3" name="sites_id_seq">
+      <ObjectId>415960</ObjectId>
+      <StateNumber>90127</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="13" parent="3" name="tags_id_seq">
-      <ObjectId>399060</ObjectId>
-      <StateNumber>79628</StateNumber>
+    <sequence id="13" parent="3" name="taggables_id_seq">
+      <ObjectId>415933</ObjectId>
+      <StateNumber>90121</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="14" parent="3" name="users_id_seq">
-      <ObjectId>399040</ObjectId>
-      <StateNumber>79624</StateNumber>
+    <sequence id="14" parent="3" name="tags_id_seq">
+      <ObjectId>415925</ObjectId>
+      <StateNumber>90119</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <table id="15" parent="3" name="mangas">
-      <ObjectId>399078</ObjectId>
-      <StateNumber>79632</StateNumber>
+    <sequence id="15" parent="3" name="users_id_seq">
+      <ObjectId>415905</ObjectId>
+      <StateNumber>90115</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="16" parent="3" name="mangas">
+      <ObjectId>415943</ObjectId>
+      <StateNumber>90123</StateNumber>
     </table>
-    <table id="16" parent="3" name="medias">
-      <ObjectId>399086</ObjectId>
-      <StateNumber>79634</StateNumber>
+    <table id="17" parent="3" name="medias">
+      <ObjectId>415951</ObjectId>
+      <StateNumber>90125</StateNumber>
     </table>
-    <table id="17" parent="3" name="migrations">
-      <ObjectId>399034</ObjectId>
-      <StateNumber>79623</StateNumber>
+    <table id="18" parent="3" name="migrations">
+      <ObjectId>415899</ObjectId>
+      <StateNumber>90114</StateNumber>
     </table>
-    <table id="18" parent="3" name="password_resets">
-      <ObjectId>399053</ObjectId>
-      <StateNumber>79626</StateNumber>
+    <table id="19" parent="3" name="password_resets">
+      <ObjectId>415918</ObjectId>
+      <StateNumber>90117</StateNumber>
     </table>
-    <table id="19" parent="3" name="taggables">
-      <ObjectId>399070</ObjectId>
-      <StateNumber>79630</StateNumber>
+    <table id="20" parent="3" name="sites">
+      <ObjectId>415962</ObjectId>
+      <StateNumber>90127</StateNumber>
     </table>
-    <table id="20" parent="3" name="tags">
-      <ObjectId>399062</ObjectId>
-      <StateNumber>79628</StateNumber>
+    <table id="21" parent="3" name="taggables">
+      <ObjectId>415935</ObjectId>
+      <StateNumber>90121</StateNumber>
     </table>
-    <table id="21" parent="3" name="users">
-      <ObjectId>399042</ObjectId>
-      <StateNumber>79624</StateNumber>
+    <table id="22" parent="3" name="tags">
+      <ObjectId>415927</ObjectId>
+      <StateNumber>90119</StateNumber>
     </table>
-    <column id="22" parent="15" name="id">
+    <table id="23" parent="3" name="users">
+      <ObjectId>415907</ObjectId>
+      <StateNumber>90115</StateNumber>
+    </table>
+    <column id="24" parent="16" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79632</StateNumber>
+      <StateNumber>90123</StateNumber>
       <SequenceName>mangas_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;mangas_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="23" parent="15" name="title">
+    <column id="25" parent="16" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79632</StateNumber>
+      <StateNumber>90123</StateNumber>
     </column>
-    <column id="24" parent="15" name="count_page">
+    <column id="26" parent="16" name="count_page">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79632</StateNumber>
+      <StateNumber>90123</StateNumber>
     </column>
-    <column id="25" parent="15" name="created_at">
+    <column id="27" parent="16" name="created_at">
       <Position>4</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79632</StateNumber>
+      <StateNumber>90123</StateNumber>
     </column>
-    <column id="26" parent="15" name="updated_at">
+    <column id="28" parent="16" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79632</StateNumber>
+      <StateNumber>90123</StateNumber>
     </column>
-    <index id="27" parent="15" name="mangas_pkey">
-      <ObjectId>399082</ObjectId>
+    <index id="29" parent="16" name="mangas_pkey">
+      <ObjectId>415947</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="28" parent="15" name="mangas_pkey">
-      <ObjectId>399083</ObjectId>
+    <key id="30" parent="16" name="mangas_pkey">
+      <ObjectId>415948</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>mangas_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="29" parent="16" name="id">
+    <column id="31" parent="17" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79634</StateNumber>
+      <StateNumber>90125</StateNumber>
       <SequenceName>medias_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;medias_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="30" parent="16" name="title">
+    <column id="32" parent="17" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79634</StateNumber>
+      <StateNumber>90125</StateNumber>
     </column>
-    <column id="31" parent="16" name="file">
+    <column id="33" parent="17" name="file">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79634</StateNumber>
+      <StateNumber>90125</StateNumber>
     </column>
-    <column id="32" parent="16" name="type">
+    <column id="34" parent="17" name="type">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79634</StateNumber>
+      <StateNumber>90125</StateNumber>
     </column>
-    <column id="33" parent="16" name="model_id">
+    <column id="35" parent="17" name="model_id">
       <Position>5</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79634</StateNumber>
+      <StateNumber>90125</StateNumber>
     </column>
-    <column id="34" parent="16" name="created_at">
+    <column id="36" parent="17" name="page">
       <Position>6</Position>
-      <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79634</StateNumber>
+      <DataType>integer|0</DataType>
+      <StateNumber>90125</StateNumber>
     </column>
-    <column id="35" parent="16" name="updated_at">
+    <column id="37" parent="17" name="created_at">
       <Position>7</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79634</StateNumber>
+      <StateNumber>90125</StateNumber>
     </column>
-    <index id="36" parent="16" name="medias_pkey">
-      <ObjectId>399093</ObjectId>
+    <column id="38" parent="17" name="updated_at">
+      <Position>8</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>90125</StateNumber>
+    </column>
+    <index id="39" parent="17" name="medias_pkey">
+      <ObjectId>415958</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="37" parent="16" name="medias_pkey">
-      <ObjectId>399094</ObjectId>
+    <key id="40" parent="17" name="medias_pkey">
+      <ObjectId>415959</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>medias_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="38" parent="17" name="id">
+    <column id="41" parent="18" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79623</StateNumber>
+      <StateNumber>90114</StateNumber>
       <SequenceName>migrations_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;migrations_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="39" parent="17" name="migration">
+    <column id="42" parent="18" name="migration">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79623</StateNumber>
+      <StateNumber>90114</StateNumber>
     </column>
-    <column id="40" parent="17" name="batch">
+    <column id="43" parent="18" name="batch">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79623</StateNumber>
+      <StateNumber>90114</StateNumber>
     </column>
-    <index id="41" parent="17" name="migrations_pkey">
-      <ObjectId>399038</ObjectId>
+    <index id="44" parent="18" name="migrations_pkey">
+      <ObjectId>415903</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="17" name="migrations_pkey">
-      <ObjectId>399039</ObjectId>
+    <key id="45" parent="18" name="migrations_pkey">
+      <ObjectId>415904</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>migrations_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="43" parent="18" name="email">
+    <column id="46" parent="19" name="email">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79626</StateNumber>
+      <StateNumber>90117</StateNumber>
     </column>
-    <column id="44" parent="18" name="token">
+    <column id="47" parent="19" name="token">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79626</StateNumber>
+      <StateNumber>90117</StateNumber>
     </column>
-    <column id="45" parent="18" name="created_at">
+    <column id="48" parent="19" name="created_at">
       <Position>3</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79626</StateNumber>
+      <StateNumber>90117</StateNumber>
     </column>
-    <index id="46" parent="18" name="password_resets_email_index">
-      <ObjectId>399059</ObjectId>
+    <index id="49" parent="19" name="password_resets_email_index">
+      <ObjectId>415924</ObjectId>
       <ColNames>email</ColNames>
     </index>
-    <column id="47" parent="19" name="id">
+    <column id="50" parent="20" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79630</StateNumber>
-      <SequenceName>taggables_id_seq</SequenceName>
-      <DefaultExpression>nextval(&apos;taggables_id_seq&apos;::regclass)</DefaultExpression>
+      <StateNumber>90127</StateNumber>
+      <SequenceName>sites_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;sites_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="48" parent="19" name="tag_id">
+    <column id="51" parent="20" name="name">
       <Position>2</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>79630</StateNumber>
-    </column>
-    <column id="49" parent="19" name="taggable_id">
-      <Position>3</Position>
-      <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>79630</StateNumber>
-    </column>
-    <column id="50" parent="19" name="taggable_type">
-      <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79630</StateNumber>
+      <StateNumber>90127</StateNumber>
     </column>
-    <column id="51" parent="19" name="created_at">
+    <column id="52" parent="20" name="selector">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>90127</StateNumber>
+    </column>
+    <column id="53" parent="20" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>90127</StateNumber>
+    </column>
+    <column id="54" parent="20" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79630</StateNumber>
+      <StateNumber>90127</StateNumber>
     </column>
-    <column id="52" parent="19" name="updated_at">
-      <Position>6</Position>
-      <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79630</StateNumber>
-    </column>
-    <index id="53" parent="19" name="taggables_pkey">
-      <ObjectId>399074</ObjectId>
+    <index id="55" parent="20" name="sites_pkey">
+      <ObjectId>415969</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="54" parent="19" name="taggables_pkey">
-      <ObjectId>399075</ObjectId>
+    <key id="56" parent="20" name="sites_pkey">
+      <ObjectId>415970</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>sites_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="57" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>90121</StateNumber>
+      <SequenceName>taggables_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;taggables_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="58" parent="21" name="tag_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>90121</StateNumber>
+    </column>
+    <column id="59" parent="21" name="taggable_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>90121</StateNumber>
+    </column>
+    <column id="60" parent="21" name="taggable_type">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>90121</StateNumber>
+    </column>
+    <column id="61" parent="21" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>90121</StateNumber>
+    </column>
+    <column id="62" parent="21" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>90121</StateNumber>
+    </column>
+    <index id="63" parent="21" name="taggables_pkey">
+      <ObjectId>415939</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="64" parent="21" name="taggables_pkey">
+      <ObjectId>415940</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>taggables_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="55" parent="20" name="id">
+    <column id="65" parent="22" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79628</StateNumber>
+      <StateNumber>90119</StateNumber>
       <SequenceName>tags_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;tags_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="56" parent="20" name="title">
+    <column id="66" parent="22" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79628</StateNumber>
+      <StateNumber>90119</StateNumber>
     </column>
-    <column id="57" parent="20" name="created_at">
+    <column id="67" parent="22" name="created_at">
       <Position>3</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79628</StateNumber>
+      <StateNumber>90119</StateNumber>
     </column>
-    <column id="58" parent="20" name="updated_at">
+    <column id="68" parent="22" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79628</StateNumber>
+      <StateNumber>90119</StateNumber>
     </column>
-    <index id="59" parent="20" name="tags_pkey">
-      <ObjectId>399066</ObjectId>
+    <index id="69" parent="22" name="tags_pkey">
+      <ObjectId>415931</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="60" parent="20" name="tags_pkey">
-      <ObjectId>399067</ObjectId>
+    <key id="70" parent="22" name="tags_pkey">
+      <ObjectId>415932</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>tags_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="61" parent="21" name="id">
+    <column id="71" parent="23" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79624</StateNumber>
+      <StateNumber>90115</StateNumber>
       <SequenceName>users_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="62" parent="21" name="name">
+    <column id="72" parent="23" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79624</StateNumber>
+      <StateNumber>90115</StateNumber>
     </column>
-    <column id="63" parent="21" name="email">
+    <column id="73" parent="23" name="email">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79624</StateNumber>
+      <StateNumber>90115</StateNumber>
     </column>
-    <column id="64" parent="21" name="email_verified_at">
+    <column id="74" parent="23" name="email_verified_at">
       <Position>4</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79624</StateNumber>
+      <StateNumber>90115</StateNumber>
     </column>
-    <column id="65" parent="21" name="password">
+    <column id="75" parent="23" name="password">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>79624</StateNumber>
+      <StateNumber>90115</StateNumber>
     </column>
-    <column id="66" parent="21" name="remember_token">
+    <column id="76" parent="23" name="remember_token">
       <Position>6</Position>
       <DataType>varchar(100)|0</DataType>
-      <StateNumber>79624</StateNumber>
+      <StateNumber>90115</StateNumber>
     </column>
-    <column id="67" parent="21" name="created_at">
+    <column id="77" parent="23" name="created_at">
       <Position>7</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79624</StateNumber>
+      <StateNumber>90115</StateNumber>
     </column>
-    <column id="68" parent="21" name="updated_at">
+    <column id="78" parent="23" name="updated_at">
       <Position>8</Position>
       <DataType>timestamp(0)|0</DataType>
-      <StateNumber>79624</StateNumber>
+      <StateNumber>90115</StateNumber>
     </column>
-    <index id="69" parent="21" name="users_pkey">
-      <ObjectId>399049</ObjectId>
+    <index id="79" parent="23" name="users_pkey">
+      <ObjectId>415914</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="70" parent="21" name="users_email_unique">
-      <ObjectId>399051</ObjectId>
+    <index id="80" parent="23" name="users_email_unique">
+      <ObjectId>415916</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="71" parent="21" name="users_pkey">
-      <ObjectId>399050</ObjectId>
+    <key id="81" parent="23" name="users_pkey">
+      <ObjectId>415915</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="72" parent="21" name="users_email_unique">
-      <ObjectId>399052</ObjectId>
+    <key id="82" parent="23" name="users_email_unique">
+      <ObjectId>415917</ObjectId>
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>

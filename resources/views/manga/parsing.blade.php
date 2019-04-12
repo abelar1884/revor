@@ -18,13 +18,23 @@
                 </ul>
             </div>
         @endif
+        <h2 style="text-align: center">Parsing</h2>
         <div class="row">
-            {{Form::open(['url' => '/manga/upload', 'class' => 'offset-xl-3 col-xl-6', 'file' => true])}}
+            {{Form::open(['url' => '/manga/parsing-do', 'class' => 'offset-xl-3 col-xl-6', 'file' => true])}}
             <div class="form-group">
-                <input name="name" class="form-control">
+                @if($sites)
+                    <select name="site" class="form-control">
+                    @foreach($sites as $site)
+                        <option value="{{$site->selector}}">{{$site->name}}</option>
+                    @endforeach
+                    </select>
+                @endif
             </div>
             <div class="form-group">
-                <input type="file" name="files[]" multiple>
+                <input class="form-control" name="name">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="link" value="http://oreno-erohon.com/?p=163353">
             </div>
             <div class="form-group">
                 @if($tags)
@@ -38,7 +48,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-success">
+                <input type="submit" class="btn btn-success" value="Parsing">
             </div>
             {{Form::close()}}
         </div>

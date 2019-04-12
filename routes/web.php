@@ -13,9 +13,11 @@
 
 Route::get('/', 'MainController@index')->name('index');
 
-Route::get('/manga/single/{manga}', 'MangaController@showSinglePage')->name('manga.single');
+Route::get('/manga/single/{manga}', 'MangaController@singlePage')->name('manga.single');
 
 Route::get('/manga/add', 'MangaController@addPage')->name('manga.add');
+Route::get('/manga/parsing', 'MangaController@parsingPage')->name('manga.parsing');
 
 Route::post('/manga/upload', 'MangaController@addManga');
-Route::post('/manga/parsing', 'MangaController@parsing');
+Route::post('/manga/parsing-do', 'MangaController@parsing');
+Route::post('/manga/remove', 'MangaController@remove');

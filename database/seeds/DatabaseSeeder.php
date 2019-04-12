@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call(MangaSeed::class);
         $this->call(TagSeed::class);
+        $this->call(SiteSeed::class);
     }
 }

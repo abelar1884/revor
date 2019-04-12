@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Manga;
+use App\Models\Medias;
+use App\Models\Site;
 use App\Models\Tag;
+use App\Models\Taggable;
 use Illuminate\Http\Request;
 use App\Modules\Traits\Parser;
 use App\Modules\Traits\UploadManga;
+use Illuminate\Support\Facades\Storage;
 
 class MangaController extends Controller
 {
@@ -22,12 +26,27 @@ class MangaController extends Controller
 
     public function addPage()
     {
-        return view('manga.add', ['tags' => Tag::all()]);
+        return view('manga.add', [
+            'title' => 'Add new Manga',
+            'tags' => Tag::all()
+        ]);
     }
 
-    public function showSinglePage(Manga $manga)
+    public function singlePage(Manga $manga)
     {
-        return view('manga.single', ['object' => $manga]);
+        return view('manga.single', [
+            'title' => 'Manga | '.$manga->title,
+            'object' => $manga
+        ]);
+    }
+
+    public function parsingPage()
+    {
+        return view('manga.parsing', [
+            'title' => 'Parsing Manga',
+            'sites' => Site::all(),
+            'tags' => Tag::all()
+        ]);
     }
 
     /*************************************************************************************************
@@ -50,6 +69,28 @@ class MangaController extends Controller
 
         return redirect()->back()->with('success', 'Parsing success');
     }
+
+    public function remove(Request $request)
+    {
+        if ($request->input('manga_id'))
+        {
+            $manga = Manga::find($request->input('manga_id'));
+            $dir = explode('/', $manga->pages->first()->file);
+
+            Taggable::where('taggable_id', $manga->id)->where('taggable_type', Manga::class)->delete();
+
+            Storage::disk('public')->deleteDirectory('/manga/'.$dir[2]);
+
+            Medias::where('model_id', $manga->id)->delete();
+
+            $manga->delete();
+
+            return redirect()->route('index')->with('success', 'Delete Success');
+        }
+
+        return redirect()->back();
+    }
+
 
     /**************************************************************************************************
      * @return \Illuminate\Http\JsonResponse
