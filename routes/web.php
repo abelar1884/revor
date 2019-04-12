@@ -18,3 +18,4 @@ Route::get('/manga/single/{manga}', 'MangaController@showSinglePage')->name('man
 Route::get('/manga/add', 'MangaController@addPage')->name('manga.add');
 
 Route::post('/manga/upload', 'MangaController@addManga');
+Route::post('/manga/parsing', 'MangaController@parsing');

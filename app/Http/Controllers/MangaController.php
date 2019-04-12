@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Manga;
-use App\Models\Medias;
 use App\Models\Tag;
-use App\Models\Taggable;
-use App\Modules\Traits\UploadManga;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Modules\Traits\Parser;
+use App\Modules\Traits\UploadManga;
 
 class MangaController extends Controller
 {
+    use Parser;
     use UploadManga;
+
+
+    /**************************************************************************************************
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     *
+     * Pages
+     *************************************************************************************************/
 
     public function addPage()
     {
@@ -24,47 +30,32 @@ class MangaController extends Controller
         return view('manga.single', ['object' => $manga]);
     }
 
+    /*************************************************************************************************
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     *
+     * Functions
+     *************************************************************************************************/
 
     public function addManga(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'files' => 'required',
-            'tags' => 'required'
-        ]);
-
-        $manga = Manga::create([
-            'title' => $request->input('name'),
-            'count_page' => count($request->file('files'))
-        ]);
-
-        $number_page = 1;
-
-        foreach ($request->file('files') as $file)
-        {
-            Medias::create([
-                'title' => $file->getClientOriginalName(),
-                'file' => $file->storeAs('manga/'.$request->input('name'), 'page_'.$number_page.'.'.$file->extension(),'public'),
-                'type' => 'manga_page',
-                'model_id' => $manga->id,
-                'page' => $number_page
-            ]);
-
-            $number_page++;
-        }
-
-        foreach ($request->input('tags') as $tag)
-        {
-            Taggable::create([
-                'tag_id' => $tag,
-                'taggable_id' => $manga->id,
-                'taggable_type' => Manga::class
-            ]);
-        }
+        UploadManga::upload($request);
 
         return redirect()->back()->with('success', 'Манга добавлена');
     }
 
+    public function parsing(Request $request)
+    {
+        Parser::getContent($request);
+
+        return redirect()->back()->with('success', 'Parsing success');
+    }
+
+    /**************************************************************************************************
+     * @return \Illuminate\Http\JsonResponse
+     *
+     * API
+     *************************************************************************************************/
     public function mangaAll()
     {
         $manga = Manga::find(1);
