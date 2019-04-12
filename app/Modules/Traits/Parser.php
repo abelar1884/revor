@@ -20,13 +20,13 @@ trait Parser
 
         $manga = Manga::create([
             'title' => $request->input('name'),
-            'count_page' => count($crawler->filter('.entry-content img'))
+            'count_page' => count($crawler->filter($request->input('site')))
         ]);
 
         $number_page = 1;
         $path = '/manga/manga_'.date('U');
 
-        foreach($crawler->filter('.entry-content img') as $img)
+        foreach($crawler->filter($request->input('site')) as $img)
         {
             $contents = file_get_contents($img->getAttribute('src'));
             $name = substr($img->getAttribute('src'), strrpos($img->getAttribute('src'), '/') + 1);

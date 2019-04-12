@@ -44,6 +44,11 @@
         <div class="row">
             {{Form::open(['url' => '/manga/parsing', 'class' => 'offset-xl-3 col-xl-6', 'file' => true])}}
             <div class="form-group">
+                <select class="form-control" name="site">
+                    <option value=".entry-content img">oreno-erohon</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <input class="form-control" name="name">
             </div>
             <div class="form-group">
