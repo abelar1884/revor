@@ -10,7 +10,8 @@ class Medias extends Model
         'title',
         'file',
         'type',
-        'model_id'
+        'model_id',
+        'page'
     ];
 
     public function medias()

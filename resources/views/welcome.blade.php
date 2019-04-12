@@ -22,7 +22,7 @@
                     </p>
                 </div>
             @endforeach
-            {{$mangas->render()}}
         </div>
+        {{$mangas->render()}}
     </div>
 @endsection

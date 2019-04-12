@@ -13,7 +13,7 @@
 
 Route::get('/', 'MainController@index')->name('index');
 
-Route::get('/manga/{manga}', 'MangaController@showSinglePage')->name('manga.single');
+Route::get('/manga/single/{manga}', 'MangaController@showSinglePage')->name('manga.single');
 
 Route::get('/manga/add', 'MangaController@addPage')->name('manga.add');
 

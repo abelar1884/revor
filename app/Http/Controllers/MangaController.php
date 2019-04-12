@@ -38,14 +38,19 @@ class MangaController extends Controller
             'count_page' => count($request->file('files'))
         ]);
 
+        $number_page = 1;
+
         foreach ($request->file('files') as $file)
         {
             Medias::create([
                 'title' => $file->getClientOriginalName(),
-                'file' => $file->store('manga/'.$request->input('name'), 'public'),
+                'file' => $file->storeAs('manga/'.$request->input('name'), 'page_'.$number_page.'.'.$file->extension(),'public'),
                 'type' => 'manga_page',
-                'model_id' => $manga->id
+                'model_id' => $manga->id,
+                'page' => $number_page
             ]);
+
+            $number_page++;
         }
 
         foreach ($request->input('tags') as $tag)

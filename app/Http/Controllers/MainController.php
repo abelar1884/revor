@@ -9,6 +9,6 @@ class MainController extends Controller
 {
     public function index()
     {
-        return view('welcome',['mangas' => Manga::orderBy('created_at', 'asc')->paginate(20)]);
+        return view('welcome',['mangas' => Manga::orderBy('id', 'desc')->paginate(20)]);
     }
 }

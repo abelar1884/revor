@@ -19,6 +19,7 @@ class CreateMediasTable extends Migration
             $table->string('file');
             $table->string('type');
             $table->unsignedInteger('model_id');
+            $table->integer('page')->nullable();
             $table->timestamps();
         });
     }
